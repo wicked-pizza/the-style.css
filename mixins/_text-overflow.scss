@@ -1,0 +1,5 @@
+@mixin text-overflow ($value: ellipsis) {
+  white-space: nowrap;
+  text-overflow: $value;
+  overflow: hidden;
+}

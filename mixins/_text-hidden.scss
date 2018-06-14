@@ -1,0 +1,10 @@
+/**
+ * Text hidden
+ * @param {Property} width <%|px>
+ */
+@mixin text-hidden ($width: -102%) {
+  color: transparent;
+  white-space: nowrap;
+  text-indent: $width;
+  overflow: hidden;
+}

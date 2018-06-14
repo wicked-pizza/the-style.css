@@ -1,0 +1,15 @@
+@mixin carousel {
+  width: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+       -ms-scroll-chaining: chained;
+
+  &::-webkit-scrollbar {
+    display: none;
+    height: 0 !important;
+  }
+}

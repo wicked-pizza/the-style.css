@@ -1,0 +1,25 @@
+/**
+ * Web font
+ * @param {String} $font-name
+ * @param {String} $font-path
+ * @param {String} $category
+ */
+@mixin webfont-import($font-name, $font-path, $category: '') {
+  @font-face {
+    font-family: '#{$font-name}';
+    src: url($font-path + '.eot');
+    src: url($font-path + '.eot?#iefix') format('embedded-opentype'),
+      url($font-path + '.woff') format('woff'),
+      url($font-path + '.ttf') format('truetype'),
+      url($font-path + '.svg#' + $font-name + '') format('svg');
+  }
+
+  @if $category != '' {
+    font-family: '#{$font-name}', '#{$category}';
+  } @else {
+    font-family: '#{$font-name}';
+  }
+
+  font-weight: normal;
+  font-style: normal;
+}

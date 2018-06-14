@@ -1,0 +1,5 @@
+@mixin overflow-scroll {
+  -webkit-backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+       -ms-scroll-chaining: chained;
+}

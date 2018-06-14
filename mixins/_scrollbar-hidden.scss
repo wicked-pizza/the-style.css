@@ -1,0 +1,9 @@
+@mixin scrollbar-hidden {
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+}

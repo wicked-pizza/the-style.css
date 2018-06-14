@@ -1,0 +1,25 @@
+@mixin protect {
+  position: relative;
+  z-index: 1;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none; // リンク長押しのポップアップメニューを解除
+  user-select: none; // 選択を無効
+
+  &::after {
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: rgba(0,0,0,0);
+  }
+
+  > * {
+    position: relative;
+    z-index: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+    user-select: none;
+  }

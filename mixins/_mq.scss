@@ -1,0 +1,42 @@
+// It should be setting these variables.
+// $min-width: 320;
+// $mobile-width: 480;
+// $tablet-width: 768;
+// $desktop-width: 1024;
+// $max-width: 1280;
+
+@mixin mq($prop: null, $value: null) {
+  @media screen and (#{$prop}: #{$value}px) {
+    @content;
+  }
+}
+
+@mixin min {
+  @include mq(max-width, #{$min-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include mq(min-width, #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include mq(min-width, #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include media-query(min-width, #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin max {
+  @include mq(min-width, #{$max-width}) {
+    @content;
+  }
+}

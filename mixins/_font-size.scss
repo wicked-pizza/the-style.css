@@ -1,0 +1,29 @@
+// It should be setting these variables.
+// $min-width: 320;
+// $mobile-width: 374;
+// $tablet-width: 768;
+
+@mixin font-size-mobile ($size: null) {
+  @include font-size-vw($size);
+
+  @media (min-width: #{$tablet-width}px) {
+    font-size: #{$size}px;
+  }
+
+  @media (max-width: #{$min-width}px) {
+    @include min-font-size($size);
+  }
+}
+
+@mixin font-size-vw ($size: null) {
+  @if ($size != null) {
+    font-size: #{$size}px;
+    font-size: #{100 * $size / $mobile-width}vw;
+  }
+}
+
+@mixin min-font-size ($size: null) {
+  @if ($size != null) {
+    font-size: #{$size * ($min-width / $mobile-width)}px;
+  }
+}

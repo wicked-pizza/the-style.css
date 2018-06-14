@@ -1,0 +1,23 @@
+/**
+ * Data if
+ * @example
+ * Scss:
+ * @include data-if('mobile', 'desktop');
+ * @include data-if('mobile', 'mobile');
+ * HTML:
+ * <div data-if="mobile"/>
+ * <div data-if="desktop"/>
+ *
+ */
+
+@mixin data-if ($condition: null, $input: null, $value: block) {
+  @if ($condition != null) {
+    [data-if="#{$condition}"] {
+      @if ($condition == $input) {
+        display: $value;
+      } @else {
+        display: none;
+      }
+    }
+  }
+}
