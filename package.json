@@ -2,9 +2,9 @@
   "name": "the-style.css",
   "version": "1.0.1",
   "description": "",
-  "main": "the-style.css",
+  "main": "the-style.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "browserslist": [
     "last 2 versions",
