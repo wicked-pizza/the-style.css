@@ -30,7 +30,7 @@
 }
 
 @mixin desktop {
-  @include media-query(min-width, #{$desktop-width}) {
+  @include mq(min-width, #{$desktop-width}) {
     @content;
   }
 }
