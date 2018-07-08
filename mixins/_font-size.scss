@@ -1,8 +1,12 @@
-// It should be setting these variables.
-// $min-width: 320;
-// $mobile-width: 374;
-// $tablet-width: 768;
-
+/**
+ * It should be setting these variables.
+ * $min-width: 320;
+ * $mobile-width: 374;
+ * $tablet-width: 768;
+ *
+ * @examples:
+ * @include font-size-mobile(11);
+ */
 @mixin font-size-mobile ($size: null) {
   @include font-size-vw($size);
 
