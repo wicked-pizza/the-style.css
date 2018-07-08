@@ -1,0 +1,21 @@
+/**
+ * It shoud be set a variable `$assets: ('images': 'path/to/images')`;
+ * @examples
+ * $assets: ('images', 'assets/images');
+ * image('logo.png') -> "assets/images/logo.png" 
+ * image('logo.png', true); -> url("assets/images/logo.png")
+ */
+
+@function image ($path: null, $css: false) {
+  @if ($path == null) {
+    @return null;
+  } @else {
+    $image-path: map-get($assets, 'images') + $path;
+    
+    @if ($css == true) {
+      @return url(#{$image-path});
+    } @else {
+      @return $image-path;
+    }
+  }
+}
